@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#0b0e0c"><meta name="description" content="Большие цели начинаются с ежедневных решений. Личные финансы, наглядная аналитика и ваш следующий шаг."><link rel="icon" href="./avatar.jpg"><title>Личные финансы</title><link rel="stylesheet" href="./style.css"><script src="https://telegram.org/js/telegram-web-app.js" defer></script><script src="./app.js" defer></script></head>
+<body>
+<a class="skip-link" href="#dashboard">Перейти к аналитике</a>
+<section class="journey" id="journey" aria-label="Путь к вашей цели">
+  <div class="journey-sticky">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <nav class="hero-nav" aria-label="Главная навигация">
+      <a href="./" class="wordmark"><span class="wordmark-icon">↗</span> PRIORITIES<span class="wordmark-sub">PERSONAL FINANCE</span></a>
+      <a class="nav-cta" href="#dashboard">К аналитике <span>↗</span></a>
+    </nav>
+    <div class="hero-copy">
+      <p class="hero-kicker"><span></span> YOUR LIFE. YOUR DIRECTION.</p>
+      <h1>Большие цели.<br><span>Каждый день.</span></h1>
+      <p class="hero-description">Свобода начинается с решений.<br>Деньги — инструмент, чтобы идти своим путём.</p>
+      <a href="#dashboard" class="hero-button">Посмотреть свою картину <span>↗</span></a>
+      <p class="hero-motto">action expresses priorities.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="art-halo"></div>
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <img class="journey-image" src="./avatar.jpg" alt="" fetchpriority="high">
+      <svg class="trajectory" viewBox="0 0 600 650" fill="none"><path class="trajectory-shadow" d="M90 610C330 520 210 400 370 300S400 150 490 65"/><path class="trajectory-line" pathLength="1" d="M90 610C330 520 210 400 370 300S400 150 490 65"/><circle class="goal-star" cx="490" cy="65" r="5"/></svg>
+      <div class="art-coordinate coordinate-top"><span class="tiny-cross">+</span> NEXT CHAPTER <span>01 / ∞</span></div>
+      <div class="art-coordinate coordinate-bottom"><i></i> ДВИЖЕНИЕ ИМЕЕТ ЗНАЧЕНИЕ</div>
+      <div class="floating-note"><span>МАЛЕНЬКИЕ ШАГИ</span><strong>Большая разница<span>↗</span></strong><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    </div>
+    <div class="hero-bottom"><span class="hero-index">01 — ФОКУС НА ГЛАВНОМ</span><a href="#dashboard" class="scroll-cue"><span class="scroll-mouse"><i></i></span> Листайте. Всё начинается с ясности <span>↓</span></a><span class="hero-counter"><span id="journey-progress">00</span> / 100</span></div>
+    <div class="journey-progress"><i id="journey-bar"></i></div>
+    <div class="reveal-phrase" aria-hidden="true"><span>МЕНЬШЕ ШУМА.</span><strong>Больше ясности<span>.</span></strong><small>Ваш следующий шаг — перед вами.</small></div>
+  </div>
+</section>
+
+<main class="shell" id="dashboard" tabindex="-1">
+  <header class="top"><a class="brand" href="./" aria-label="Личные финансы"><img class="brand-avatar" src="./avatar.jpg" alt="Путь к цели"><span>PRIORITIES<span class="brand-caption">Личные финансы</span></span></a><button class="icon-button" id="refresh" aria-label="Обновить данные">↻</button></header>
+  <div class="intro"><div><p class="eyebrow personal-motto">action expresses priorities.</p><h1>Всё перед глазами<span class="dot">.</span></h1></div><span class="live"><i></i><span id="live-label">Личный доступ</span></span></div>
+  <div id="demo-banner" class="banner hidden"><span class="demo-dot"></span><span>Демо-пространство · цифры для знакомства</span><a href="https://t.me/iosif_finance_2026_bot">Мои финансы в Telegram ↗</a></div>
+  <section id="gate" class="gate hidden"><div class="gate-icon">↗</div><h2>Ваши финансы — только для вас</h2><p>Откройте «Аналитику» из личного чата с ботом в Telegram.</p><a class="primary" href="https://t.me/iosif_finance_2026_bot">Открыть Telegram</a><button class="text-button" id="demo">Посмотреть демо</button></section>
+  <section id="app" class="hidden">
+    <div class="period-row"><div class="segments" role="group" aria-label="Период"><button class="active" data-period="month">Месяц</button><button data-period="week">7 дней</button><button data-period="year">Год</button><button data-period="all">Всё время</button></div><div class="month-nav"><button id="previous" aria-label="Предыдущий месяц">‹</button><span id="period-label"></span><button id="next" aria-label="Следующий месяц">›</button></div></div>
+    <p id="error" class="banner error hidden" role="alert"></p>
+    <div id="loading" class="loading hidden" role="status">Обновляем картину…</div>
+    <section class="metrics" aria-label="Сводка"><article class="metric balance"><div class="metric-label">Осталось от доходов <span>↗</span></div><div id="balance" class="big-number">—</div><div id="saving" class="metric-foot">Доходы минус расходы</div><div class="balance-line"><i id="saving-bar"></i></div></article><article class="metric"><div class="metric-label"><span class="round-icon income-icon">↙</span>Доходы</div><div id="income" class="number">—</div><div id="income-change" class="metric-foot">За выбранный период</div></article><article class="metric"><div class="metric-label"><span class="round-icon expense-icon">↗</span>Расходы</div><div id="expense" class="number">—</div><div id="expense-change" class="metric-foot">За выбранный период</div></article></section>
+    <div class="charts"><section class="panel trend-panel"><div class="panel-head"><div><p class="eyebrow">ДИНАМИКА</p><h2>Как движутся деньги</h2></div><div class="legend"><span><i class="green"></i>Доходы</span><span><i class="purple"></i>Расходы</span></div></div><div id="trend" class="trend" role="img" aria-label="График доходов и расходов"></div><div class="insight-row"><div><span>Средний расход в день</span><strong id="daily">—</strong></div><div><span>Операций за период</span><strong id="count">—</strong></div></div></section>
+    <section class="panel category-panel"><div class="panel-head"><div><p class="eyebrow">СТРУКТУРА</p><h2 id="category-title">Куда уходят деньги</h2></div><button id="category-toggle" class="pill">Расходы ⇄</button></div><div class="donut-wrap"><svg id="donut" viewBox="0 0 220 220" aria-label="Доли категорий" role="img"></svg><div class="donut-center"><span id="donut-label">Всего расходов</span><strong id="donut-total">—</strong></div></div><div id="category-list" class="category-list"></div></section></div>
+    <section class="panel transactions-panel"><div class="panel-head"><div><p class="eyebrow">ИСТОРИЯ</p><h2>Последние операции</h2></div><div class="filters" role="group" aria-label="Тип операций"><button class="active" data-kind="all">Все</button><button data-kind="expense">Расходы</button><button data-kind="income">Доходы</button></div></div><div id="transactions"></div><p id="history-note" class="subtle"></p></section>
+    <footer><span id="sync">Синхронизация с Google Sheets</span><span>BYN · Минск</span></footer>
+  </section>
+</main><div class="site-signoff"><span>action expresses priorities.</span><a href="#journey">К началу ↑</a></div><noscript><p class="noscript-note">Для интерактивной аналитики включите JavaScript. <a href="https://t.me/iosif_finance_2026_bot">Открыть бота в Telegram</a></p></noscript></body></html>
